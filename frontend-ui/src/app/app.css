@@ -1,0 +1,76 @@
+/* Main container using Flexbox */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* --- Sidebar Styles (Updated) --- */
+.sidebar {
+  width: 240px;
+  /* CHANGE: Replaced solid color with a subtle gradient for a more premium feel */
+  /* background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%); */
+  background-color: #06425d;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: 600;
+}
+
+.nav-item:hover {
+  background-color: #2b5e75; /* A slightly lighter hover */
+}
+
+.nav-item.active {
+  background-color: #2b5e75;
+}
+
+/* --- Main content area styles --- */
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* --- Header Styles (Updated) --- */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.search-container input {
+  width: 300px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+}

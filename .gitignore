@@ -1,0 +1,20 @@
+# Compiled Java files
+target/
+*.jar
+*.war
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Log files
+*.log
+
+# Node modules
+node_modules/
+npm-debug.log
+
+# Angular cache and build output
+.angular/
+dist/

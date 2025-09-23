@@ -1,0 +1,117 @@
+.modal-overlay {
+  position: fixed; /* Sit on top of the page content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Make sure it's on top */
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 600px; /* INCREASE this for a wider form */
+  position: relative;
+  max-height: 90vh; /* Make sure it doesn't get too tall on smaller screens */
+  overflow-y: auto; /* Add scroll if content exceeds max-height */
+}
+
+/* General styling for form groups */
+
+.form-row {
+  display: flex; /* Makes the children (form-groups) sit side-by-side */
+  gap: 1rem; /* Adds space between the form-groups in the row */
+  margin-bottom: 1rem; /* Space between rows */
+}
+
+.form-row .form-group {
+  flex: 1; /* Makes each form-group take equal space in the row */
+  margin-bottom: 0; /* Remove bottom margin from individual groups as row handles it */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea { /* Style for both input fields and the textarea */
+  /* ADD THIS RULE */
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allow vertical resizing, but not horizontal */
+
+}
+
+/* Style for focus state */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4A90E2; /* Highlight with primary color on focus */
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Specific style for the textarea */
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing, but not horizontal */
+  min-height: 80px; /* Give it a more reasonable starting height */
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+  background-color: #4A90E2; /* Our primary blue */
+  color: white;
+  padding: 12px 20px; /* More padding for a more substantial button */
+  border: none;
+  border-radius: 6px; /* Match form field roundedness */
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  width: 100%; /* Make the button full width */
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #357ABD; /* Darker blue on hover */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem; /* Make it a bit larger */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888; /* Slightly darker */
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #333; /* Even darker on hover */
+}
+
+/* Your existing form styles are fine */
+h3 { margin-top: 0; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+.form-group input { width: 100%; padding: 8px; box-sizing: border-box; }
+button[type="submit"] { background-color: #007bff; color: white; padding: 10px 15px; border: none; cursor: pointer; }

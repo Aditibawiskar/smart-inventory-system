@@ -1,0 +1,40 @@
+<div class="container">
+  
+  <div class="card-header">
+  <h2>Product Inventory</h2>
+  <button class="add-btn" (click)="openModal()">+ Add Product</button>
+</div>
+ <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Actions</th> </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.quantity }}</td>
+     <td class="actions-cell">
+  <div class="actions-container">
+    <button class="actions-btn" type="button" aria-label="Product Actions">
+  <i class="fas fa-ellipsis-h"></i>
+</button>
+    <ul class="actions-dropdown">
+      <li (click)="onDelete(product.id)">Delete</li>
+      <li class="disabled">Edit</li> </ul>
+  </div>
+</td>
+    </tr>
+  </tbody>
+</table>
+   <hr> <app-add-product 
+  *ngIf="isModalOpen" 
+  (productAdded)="addProductToList($event)" 
+  (closeModal)="closeModal()">
+</app-add-product>
+</div>
