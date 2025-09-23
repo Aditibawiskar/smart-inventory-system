@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private apiUrl = 'http://localhost:8080/api/products';
+  private apiUrl = 'https://smart-inventory-system-api.onrender.com/api/products';
 
   constructor(private http: HttpClient) { }
 
