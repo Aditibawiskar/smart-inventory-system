@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/api/products") 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://moonlit-faun-009f88.netlify.app"})
 public class ProductController {
 
     @Autowired
