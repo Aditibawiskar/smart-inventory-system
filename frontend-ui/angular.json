@@ -26,8 +26,7 @@
               }
             ],
             "styles": [
-              "src/styles.css",
-              "src/_redirects"  
+              "src/styles.css"
             ]
           },
           "configurations": {
