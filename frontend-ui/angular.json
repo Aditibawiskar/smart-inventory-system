@@ -22,10 +22,12 @@
               {
                 "glob": "**/*",
                 "input": "public"
+                
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/_redirects"  
             ]
           },
           "configurations": {
