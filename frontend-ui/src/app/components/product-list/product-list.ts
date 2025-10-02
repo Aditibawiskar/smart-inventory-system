@@ -14,6 +14,7 @@ export class ProductList implements OnInit {
 
   products: Product[] = []; // This will hold our list of products
  isModalOpen = false; 
+ productToEdit?: Product;
   // 1. We "inject" our ProductService here
   constructor(private productService: ProductService) { }
 
@@ -30,7 +31,27 @@ export class ProductList implements OnInit {
   this.closeModal();
 }
   // Add these new methods
-  openModal(): void {
+
+ // This method now handles both new and updated products
+  handleProductSaved(savedProduct: Product): void {
+    const index = this.products.findIndex(p => p.id === savedProduct.id);
+    if (index !== -1) {
+      // It's an update, so replace the item in the array
+      this.products[index] = savedProduct;
+    } else {
+      // It's a new product, so add it to the array
+      this.products.push(savedProduct);
+    }
+    this.closeModal(); // Close the modal
+  }
+
+   openEditModal(product: Product): void {
+    this.productToEdit = product; // Set the product to edit
+    this.isModalOpen = true;
+  }
+
+   openAddModal(): void {
+    this.productToEdit = undefined; // Ensure we're in "add" mode
     this.isModalOpen = true;
   }
 

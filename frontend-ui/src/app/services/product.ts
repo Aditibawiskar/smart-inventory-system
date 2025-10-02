@@ -24,4 +24,9 @@ export class ProductService {
   // We construct the URL like: http://localhost:8080/api/products/1
   return this.http.delete<void>(`${this.apiUrl}/${id}`);
 }
+
+updateProduct(id: number, product: Product): Observable<Product> {
+  return this.http.put<Product>(`${this.apiUrl}/${id}`, product);
+}
+
 }
